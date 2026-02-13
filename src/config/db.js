@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-
+const config = require('./env');
 // module.exports = async () => {
 //     await mongoose.connect(process.env.MONGODB_URL)
 //     console.log("database connected")
@@ -7,7 +7,7 @@ const mongoose = require('mongoose');
 
 const connectDB = async () => {
     try {
-        await mongoose.connect(process.env.MONGODB_URL);
+        await mongoose.connect(config.mongoUrl);
         console.log("connected to database");
     } catch (error) {
         console.log("unable to connect to dbatabase");
